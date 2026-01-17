@@ -111,6 +111,7 @@ ${message}`,
 
     res.json({ success: true });
   } catch (error) {
+    console.log("error",error)
     res.status(500).json({ error: error.message });
   }
 });
