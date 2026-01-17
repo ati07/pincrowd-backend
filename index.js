@@ -82,6 +82,7 @@ app.post("/send-email", async (req, res) => {
   }
 
   try {
+    console.log("testing 1")
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 465,
@@ -91,6 +92,7 @@ app.post("/send-email", async (req, res) => {
         pass: GMAIL_PASS,
       },
     });
+    console.log("testing",GMAIL_USER,GMAIL_PASS)
 
     const mailOptions = {
       from: GMAIL_USER,
@@ -108,7 +110,7 @@ ${message}`,
     };
 
     await transporter.sendMail(mailOptions);
-
+    console.log("testing")
     res.json({ success: true });
   } catch (error) {
     console.log("error",error)
