@@ -85,15 +85,15 @@ app.post("/send-email", async (req, res) => {
     console.log("testing 1")
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
-      requireTLS: true,
+      port: 465,
+      secure: true,
+    //   requireTLS: true,
       auth: {
         user: GMAIL_USER,
         pass: GMAIL_PASS,
       },
-      connectionTimeout: 10000,
-      socketTimeout: 10000,
+    //   connectionTimeout: 10000,
+    //   socketTimeout: 10000,
     });
     console.log("testing",GMAIL_USER,GMAIL_PASS)
 
